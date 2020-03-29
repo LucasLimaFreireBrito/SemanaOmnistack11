@@ -1,24 +1,19 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+
+import Header from './Header';
 
 function App() {
+  const [Counter, setCounter] = useState(0);
+
+  function increment(){
+    setCounter(Counter + 1);
+    // console.log({counter});
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Hello Malu
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+    <Header>Contador: {Counter}</Header>
+    <button onClick={increment}>Incremetar</button>
     </div>
   );
 }
